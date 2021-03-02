@@ -64,8 +64,6 @@ class Index extends Controller
                     $quest['explanation'] = $val['explanation']; 
                     $quest['ext'] = '人教版（新课程标准）/ 必修一'; 
 
-                    Db::name('questions')->insert($quest);
-                    
                     //Knowledge
                     $knowledge['question_id'] = $val['question_id'];
                     $knowledge['knowledge_name'] = $val['knowledge'];
@@ -73,14 +71,10 @@ class Index extends Controller
                     $knowledge['knowledge_path']  = json_encode($val['knowledge_path']);
                     $knowledge['knowledge_info']  = json_encode($val['knowledge_info']);
                     
-                    Db::name('knowledge')->insert($knowledge);
-                    
                     //Category
                     $category['question_id'] = $val['question_id'];
                     $category['category'] = json_encode($val['category']);
                     $category['category_path'] = json_encode($val['category_path']);
-                    
-                    Db::name('category')->insert($category);
 
                     //Source
                     $source['question_id'] = $val["question_id"];
@@ -107,25 +101,31 @@ class Index extends Controller
                     $source['sub_explanation'] = $val["sub_explanation"];
                     $source['list'] = $val["list"];
                     
-                    Db::name('source')->insert($source);
-                    
                     //Paper
                     $paper['question_id'] = $val["question_id"];
                     $paper['paperid'] = $val['paperid'];
                     $paper['title'] = $val['paper_title'];
 
-                    Db::name('paper')->insert($paper);
+                    // 启动事务
+                    Db::startTrans();
+                    try {
+                        Db::name('paper')->insert($paper);
+                        Db::name('source')->insert($source);
+                        Db::name('category')->insert($category);
+                        Db::name('knowledge')->insert($knowledge);
+                        Db::name('questions')->insert($quest);
+                        // 提交事务
+                        Db::commit();
+                    } catch (\Exception $e) {
+                        // 回滚事务
+                        Db::rollback();
+                    }
                    
                 }
-            } else {
-                continue;
             }
             // $sleepDate = rand(30,100);
             // sleep($sleepDate);
         // }
 
-
-
     }
-
 }

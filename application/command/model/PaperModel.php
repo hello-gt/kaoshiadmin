@@ -15,6 +15,6 @@ use think\Model;
 class PaperModel extends Model
 {
     // 确定链接表名
-    protected $table = 'paper';
+    protected $table = 'snake_paper';
 
 }

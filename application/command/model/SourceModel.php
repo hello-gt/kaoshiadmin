@@ -15,6 +15,6 @@ use think\Model;
 class SourceModel extends Model
 {
     // 确定链接表名
-    protected $table = 'source';
+    protected $table = 'snake_source';
 
 }

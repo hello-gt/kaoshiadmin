@@ -1,8 +1,9 @@
 <?php
 namespace app\command\controller;
  
+use think\Db;
 use think\Controller;
- 
+
 /**
  * 命令行控制器
  *
@@ -12,34 +13,7 @@ class Index extends Controller
 {
     public function test()
     {
-
-        $param = [
-            "xd" => 3,
-            "chid" => 6,
-            "categories" => 2236,
-            "knowledges" => "",
-            "question_channel_type" => "",
-            "difficult_index" => "",
-            "exam_type" => "",
-            "kid_num" => "",
-            "grade_id" => "",
-            "sort_field" => "time",
-            "filterquestion" => 0,
-            "content" => "",
-            "page" => 2,
-            "version_id" => "",
-            "_" =>  microsecond(),
-        ];
-
-        $res = http_curl("https://www.zujuan.com/api/question/list",$param,"GET");
-        var_dump($res);die;
-
-        /*$param = [
-            "qid" => 43169547,
-            "_" =>  microsecond(),
-        ];
-        $res = http_curl("https://www.zujuan.com/api/question/question-detail-access",$param,"GET"); */
-
+        var_dump("hello world");
     }
 
     /**
@@ -65,84 +39,90 @@ class Index extends Controller
             "_" =>  microsecond(),
         ];
 
-        for ($i=1; $i <= 1000; $i++) { 
-            $param['page'] = $i;
-            $param['_'] = microsecond();
+        // for ($i=1; $i <= 1000; $i++) { 
+            // $param['page'] = $i;
+            // $param['_'] = microsecond();
             // $res = http_curl("https://www.zujuan.com/api/question/list",$param,"GET");
             $res = file_get_contents("F:\kaoshiadmin\question.txt");
             $data = json_decode($res, true);
             if ($data['code'] == 0) {
-                $questions = $data['data']["questions"];
+                $result = $data['data']["questions"];
                 
-                foreach ($questions as $question) {
-
+                foreach ($result as $val) {
                     //Question
-                    $addQuestion['question_id'] = $question['question_id']; 
-                    $addQuestion['question_type'] = $question['question_type']; 
-                    $addQuestion['question_channel_type'] = $question['question_channel_type']; 
-                    $addQuestion['channel_type_name'] = $question['channel_type_name']; 
-                    $addQuestion['title'] = $question['title']; 
-                    $addQuestion['question_text'] = $question['question_text']; 
-                    $addQuestion['options'] = json_encode($question['options']); 
-                    $addQuestion['answer_json'] = json_encode($question['answer_json']); 
-                    $addQuestion['answer_json_text'] = $question['answer_json_text']; 
-                    $addQuestion['answer'] = $question['answer']; 
-                    $addQuestion['answer_text'] = $question['answer_text']; 
-                    $addQuestion['explanation'] = $question['explanation']; 
-                    $addQuestion['ext'] = '人教版（新课程标志）/ 必修一'; 
+                    $quest['question_id'] = $val['question_id']; 
+                    $quest['question_type'] = $val['question_type']; 
+                    $quest['question_channel_type'] = $val['question_channel_type']; 
+                    $quest['channel_type_name'] = $val['channel_type_name']; 
+                    $quest['title'] = $val['title']; 
+                    $quest['question_text'] = $val['question_text']; 
+                    $quest['options'] = json_encode($val['options']); 
+                    $quest['answer_json'] = json_encode($val['answer_json']); 
+                    $quest['answer_json_text'] = $val['answer_json_text']; 
+                    $quest['answer'] = $val['answer']; 
+                    $quest['answer_text'] = $val['answer_text']; 
+                    $quest['explanation'] = $val['explanation']; 
+                    $quest['ext'] = '人教版（新课程标准）/ 必修一'; 
 
+                    Db::name('questions')->insert($quest);
+                    
                     //Knowledge
-                    $addKnowledge['question_id'] = $question['question_id'];
-                    $addKnowledge['knowledge_name'] = $question['knowledge'];
-                    $addKnowledge['t_knowledge'] = json_encode($question['t_knowledge']);
-                    $addKnowledge['knowledge_path']  = json_encode($question['knowledge_path']);
-                    $addKnowledge['knowledge_info']  = json_encode($question['knowledge_info']);
-
+                    $knowledge['question_id'] = $val['question_id'];
+                    $knowledge['knowledge_name'] = $val['knowledge'];
+                    $knowledge['t_knowledge'] = json_encode($val['t_knowledge']);
+                    $knowledge['knowledge_path']  = json_encode($val['knowledge_path']);
+                    $knowledge['knowledge_info']  = json_encode($val['knowledge_info']);
+                    
+                    Db::name('knowledge')->insert($knowledge);
+                    
                     //Category
-                    $addCategory['question_id'] = $question['question_id'];
-                    $addCategory['category'] = json_encode($question['category']);
-                    $addCategory['category_path'] = json_encode($question['category_path']);
+                    $category['question_id'] = $val['question_id'];
+                    $category['category'] = json_encode($val['category']);
+                    $category['category_path'] = json_encode($val['category_path']);
+                    
+                    Db::name('category')->insert($category);
 
                     //Source
-                    $addSource["question_id"] = $question["question_id"];
-                    $addSource["parent_id"] = $question["parent_id"];
-                    $addSource["paperid"] = $question["paperid"];
-                    $addSource["paper_title"] = $question["paper_title"];
-                    $addSource["xd"] = $question["xd"];
-                    $addSource["chid"] = $question["chid"];
-                    $addSource["exam_type"] = $question["exam_type"];
-                    $addSource["exam_name"] = $question["exam_name"];
-                    $addSource["difficult_index"] = $question["difficult_index"];
-                    $addSource["difficult_name"] = $question["difficult_name"];
-                    $addSource["is_objective"] = $question["is_objective"];
-                    $addSource["is_collect"] = $question["is_collect"];
-                    $addSource["extra_file"] = $question["extra_file"];
-                    $addSource["save_num"] = $question["save_num"];
-                    $addSource["new_flag"] = $question["new_flag"];
-                    $addSource["is_use"] = $question["is_use"];
-                    $addSource["paper_source"] = $question["paper_source"];
-                    $addSource["link_paper"] = $question["link_paper"];
-                    $addSource["myanswer"] = $question["myanswer"];
-                    $addSource["create_at"] = $question["create_at"];
-                    $addSource["explain_sort_need"] = $question["explain_sort_need"];
-                    $addSource["sub_explanation"] = $question["sub_explanation"];
-                    $addSource["list"] = $question["list"];
-
+                    $source['question_id'] = $val["question_id"];
+                    $source['parent_id'] = $val["parent_id"];
+                    $source['paperid'] = $val["paperid"];
+                    $source['paper_title'] = $val["paper_title"];
+                    $source['xd'] = $val["xd"];
+                    $source['chid'] = $val["chid"];
+                    $source['exam_type'] = $val["exam_type"];
+                    $source['exam_name'] = $val["exam_name"];
+                    $source['difficult_index'] = $val["difficult_index"];
+                    $source['difficult_name'] = $val["difficult_name"];
+                    $source['is_objective'] = $val["is_objective"];
+                    $source['is_collect'] = $val["is_collect"];
+                    $source['extra_file'] = $val["extra_file"];
+                    $source['save_num'] = $val["save_num"];
+                    $source['new_flag'] = $val["new_flag"];
+                    $source['is_use'] = $val["is_use"];
+                    $source['paper_source'] = $val["paper_source"];
+                    $source['link_paper'] = $val["link_paper"];
+                    $source['myanswer'] = $val["myanswer"];
+                    $source['create_at'] = $val["create_at"];
+                    $source['explain_sort_need'] = $val["explain_sort_need"];
+                    $source['sub_explanation'] = $val["sub_explanation"];
+                    $source['list'] = $val["list"];
+                    
+                    Db::name('source')->insert($source);
+                    
                     //Paper
-                    $addPaper["question_id"] = $question["question_id"];
-                    $addPaper["paperid"] = $question['exit_paper']["pid"];
-                    $addPaper["title"] = $question['exit_paper']["title"];
+                    $paper['question_id'] = $val["question_id"];
+                    $paper['paperid'] = $val['paperid'];
+                    $paper['title'] = $val['paper_title'];
 
-                    print_r($addPaper);die;
+                    Db::name('paper')->insert($paper);
+                   
                 }
-
             } else {
                 continue;
             }
-
-            $sleepDate = rand(30,100);
-            sleep($sleepDate);
-        }
+            // $sleepDate = rand(30,100);
+            // sleep($sleepDate);
+        // }
 
 
 

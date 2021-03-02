@@ -15,6 +15,6 @@ use think\Model;
 class KnowledgeModel extends Model
 {
     // 确定链接表名
-    protected $table = 'knowledge';
+    protected $table = 'snake_knowledge';
 
 }

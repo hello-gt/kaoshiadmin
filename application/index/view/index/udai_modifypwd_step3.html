@@ -1,0 +1,101 @@
+{include file="../application/index/view/common/head.html" /}
+	<!-- 顶部tab -->
+	{include file="../application/index/view/common/tab.html" /}
+	<!-- 顶部标题 -->
+	<div class="bgf5 clearfix">
+		<div class="top-user">
+			<div class="inner">
+				<a class="logo" href="index.html"><img src="/static/index/images/icons/logo.jpg" alt="出卷网" class="cover"></a>
+				<div class="title">个人中心</div>
+			</div>
+		</div>
+	</div>
+	<div class="content clearfix bgf5">
+		<section class="user-center inner clearfix">
+			<div class="pull-left bgf">
+				<a href="udai_welcome.html" class="title">U袋欢迎页</a>
+				<dl class="user-center__nav">
+					<dt>帐户信息</dt>
+					<a href="udai_setting.html"><dd>个人资料</dd></a>
+					<a href="udai_treasurer.html"><dd>资金管理</dd></a>
+					<a href="udai_integral.html"><dd>积分平台</dd></a>
+					<a href="udai_address.html"><dd>收货地址</dd></a>
+					<a href="udai_coupon.html"><dd>我的优惠券</dd></a>
+					<a href="udai_paypwd_modify.html"><dd>修改支付密码</dd></a>
+					<a href="udai_pwd_modify.html"><dd class="active">修改登录密码</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>订单中心</dt>
+					<a href="udai_order.html"><dd>我的订单</dd></a>
+					<a href="udai_collection.html"><dd>我的收藏</dd></a>
+					<a href="udai_refund.html"><dd>退款/退货</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>服务中心</dt>
+					<a href="udai_mail_query.html"><dd>物流查询</dd></a>
+					<a href=""><dd>数据自助下载</dd></a>
+					<a href="temp_article/udai_article1.html"><dd>售后服务</dd></a>
+					<a href="temp_article/udai_article2.html"><dd>配送服务</dd></a>
+					<a href="temp_article/udai_article3.html"><dd>用户协议</dd></a>
+					<a href="temp_article/udai_article4.html"><dd>常见问题</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>新手上路</dt>
+					<a href="temp_article/udai_article5.html"><dd>如何成为代理商</dd></a>
+					<a href="temp_article/udai_article6.html"><dd>代销商上架教程</dd></a>
+					<a href="temp_article/udai_article7.html"><dd>分销商常见问题</dd></a>
+					<a href="temp_article/udai_article8.html"><dd>付款账户</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>出卷网</dt>
+					<a href="temp_article/udai_article10.html"><dd>企业简介</dd></a>
+					<a href="temp_article/udai_article11.html"><dd>加入U袋</dd></a>
+					<a href="temp_article/udai_article12.html"><dd>隐私说明</dd></a>
+				</dl>
+			</div>
+			<div class="pull-right">
+				<div class="user-content__box clearfix bgf">
+					<div class="title">账户信息-修改登陆密码</div>
+					<div class="step-flow-box">
+						<div class="step-flow__bd">
+							<div class="step-flow__li step-flow__li_done">
+							  <div class="step-flow__state"><i class="iconfont icon-ok"></i></div>
+							  <p class="step-flow__title-top">输入旧密码</p>
+							</div>
+							<div class="step-flow__line step-flow__li_done">
+							  <div class="step-flow__process"></div>
+							</div>
+							<div class="step-flow__li step-flow__li_done">
+							  <div class="step-flow__state"><i class="iconfont icon-ok"></i></div>
+							  <p  class="step-flow__title-top">重置登陆密码</p>
+							</div>
+							<div class="step-flow__line step-flow__li_done">
+							  <div class="step-flow__process"></div>
+							</div>
+							<div class="step-flow__li step-flow__li_done">
+							  <div class="step-flow__state"><i class="iconfont icon-ok"></i></div>
+							  <p class="step-flow__title-top">完成</p>
+							</div>
+						</div>
+					</div>
+					<div class="modify-success__box text-center">
+						<div class="icon b-r50"><i class="iconfont icon-checked cf fz24"></i></div>
+						<div class="text c6">登陆密码设置成功！</div>
+						<a href="login.html" class="btn"><span id="sec">3</span> 秒后跳转至登陆页面，如果浏览器未跳转请点击这里</a>
+					</div>
+					<script>
+						$(document).ready(function(){
+							var time = 3;
+							window.setInterval(function(){
+								$('#sec').html(time--);
+								if (time < 0) {window.location.href = 'login.html'}
+							}, 1000);
+						});
+					</script>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- 右侧菜单 -->
+{include file="../application/index/view/common/right.html" /}
+{include file="../application/index/view/common/footer.html" /}

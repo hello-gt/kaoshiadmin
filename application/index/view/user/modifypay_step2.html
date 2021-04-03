@@ -1,0 +1,107 @@
+{include file="../application/index/view/common/header.html" /}
+	<!-- 顶部tab -->
+	
+
+	<div class="content clearfix bgf5">
+		<section class="user-center inner clearfix">
+			<div class="pull-left bgf">
+				
+				<dl class="user-center__nav">
+					<dt>帐户信息</dt>
+					<a href="{:url('index/setting')}"><dd>个人资料</dd></a>
+					<a href="{:url('index/treasurer')}"><dd>资金管理</dd></a>
+					<a href="{:url('index/integral')}"><dd>积分平台</dd></a>
+					<a href="{:url('index/address')}"><dd>收货地址</dd></a>
+					<a href="{:url('index/coupon')}"><dd>我的优惠券</dd></a>
+					<a href="{:url('index/paypwd_modify')}"><dd class="active">修改支付密码</dd></a>
+					<a href="{:url('index/pwd_modify')}"><dd>修改登录密码</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>订单中心</dt>
+					<a href="{:url('index/order')}"><dd>我的订单</dd></a>
+					<a href="{:url('index/collection')}"><dd>我的收藏</dd></a>
+					<a href="{:url('index/refund')}"><dd>退款/退货</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>服务中心</dt>
+					<a href="{:url('index/mail_query')}"><dd>物流查询</dd></a>
+					<a href=""><dd>数据自助下载</dd></a>
+					<a href="{:url('temp_article/article1')}"><dd>售后服务</dd></a>
+					<a href="{:url('temp_article/article2')}"><dd>配送服务</dd></a>
+					<a href="{:url('temp_article/article3')}"><dd>用户协议</dd></a>
+					<a href="{:url('temp_article/article4')}"><dd>常见问题</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>新手上路</dt>
+					<a href="{:url('temp_article/article5')}"><dd>如何成为代理商</dd></a>
+					<a href="{:url('temp_article/article6')}"><dd>代销商上架教程</dd></a>
+					<a href="{:url('temp_article/article7')}"><dd>分销商常见问题</dd></a>
+					<a href="{:url('temp_article/article8')}"><dd>付款账户</dd></a>
+				</dl>
+				<dl class="user-center__nav">
+					<dt>出卷网</dt>
+					<a href={:url('temp_article/article10')}><dd>企业简介</dd></a>
+					<a href="{:url('temp_article/article11')}"><dd>加入U袋</dd></a>
+					<a href="{:url('temp_article/article12')}"><dd>隐私说明</dd></a>
+				</dl>
+			</div>
+			<div class="pull-right">
+				<div class="user-content__box clearfix bgf">
+					<div class="title">账户信息-修改支付密码</div>
+					<div class="step-flow-box">
+						<div class="step-flow__bd">
+							<div class="step-flow__li step-flow__li_done">
+							  <div class="step-flow__state"><i class="iconfont icon-ok"></i></div>
+							  <p class="step-flow__title-top">验证身份</p>
+							</div>
+							<div class="step-flow__line step-flow__li_done">
+							  <div class="step-flow__process"></div>
+							</div>
+							<div class="step-flow__li step-flow__li_done">
+							  <div class="step-flow__state"><i class="iconfont icon-ok"></i></div>
+							  <p  class="step-flow__title-top">重置支付密码</p>
+							</div>
+							<div class="step-flow__line step-flow__line_ing">
+							  <div class="step-flow__process"></div>
+							</div>
+							<div class="step-flow__li">
+							  <div class="step-flow__state"><i class="iconfont icon-ok"></i></div>
+							  <p class="step-flow__title-top">完成</p>
+							</div>
+						</div>
+					</div>
+					<form action="{:url('index/modifypay_step3')}" class="user-setting__form" role="form">
+						<div class="form-group">
+							<input class="form-control" name="phone" required="" maxlength="11" autocomplete="off" type="password">
+							<span class="tip-text">新的密码</span>
+							<span class="see-pwd pwd-toggle" title="显示密码"><i class="glyphicon glyphicon-eye-open"></i></span>
+							<span class="error_tip"></span>
+						</div>
+						<div class="form-group">
+						<div class="form-group">
+							<input class="form-control" name="phone" required="" maxlength="11" autocomplete="off" type="password">
+							<span class="tip-text">再次确认新的密码</span>
+							<span class="see-pwd pwd-toggle" title="显示密码"><i class="glyphicon glyphicon-eye-open"></i></span>
+							<span class="error_tip"></span>
+						</div>
+						</div>
+						<div class="user-form-group tags-box">
+							<button type="submit" class="btn ">提交</button>
+						</div>
+						<script src="__INDEX__JS__/login.js"></script>
+						<script>
+							$(document).ready(function(){
+								$('.form-control').on('blur focus',function() {
+									$(this).addClass('focus')
+									if ($(this).val() == ''){$(this).removeClass('focus')}
+								});
+							});
+						</script>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- 右侧菜单 -->
+{include file="../application/index/view/common/right.html" /}
+{include file="../application/index/view/common/footer.html" /}

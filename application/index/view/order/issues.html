@@ -1,0 +1,51 @@
+{include file="../application/index/view/common/header.html" /}
+
+
+	<!-- 内页导航栏 -->
+	<div class="top-nav bg3">
+		<div class="nav-box inner">
+			<div class="all-cat">
+				<div class="title"><i class="iconfont icon-menu"></i> 全部分类</div>
+			</div>
+			<ul class="nva-list">
+				<a href="{:url('index/login')}"><li>首页</li></a>
+				<a href={:url('temp_article/article10')}><li>企业简介</li></a>
+				<a href="{:url('temp_article/article5')}"><li>新手上路</li></a>
+				<a href="{:url('index/class_room')}"><li>U袋学堂</li></a>
+				<a href="{:url('index/enterprise_id')}"><li>企业账号</li></a>
+				<a href="{:url('index/contract')}"><li>诚信合约</li></a>
+				<a href="{:url('index/item_remove')}"><li>实时下架</li></a>
+			</ul>
+		</div>
+	</div>
+	<div class="content inner">
+		<section class="panel__div clearfix">
+			<div class="filter-value">
+				<div class="filter-title">用户反馈调查</div>
+			</div>
+			<form action="" class="issues-box form-horizontal">
+				<p>尊敬的用户：</p>
+				<p>您好！为了给您提供更好的服务，我们希望收集您使用出卷网的看法或建议，对您的配合和支持表示衷心感谢！</p>
+				<div class="form-group">
+					<div class="col-xs-6">
+						<input type="password" class="form-control" id="inputPassword" placeholder="姓名">
+					</div>
+					<div class="col-xs-6">
+						<input type="password" class="form-control" id="inputPassword" placeholder="电话号码">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<textarea class="form-control" rows="5" placeholder="请输入您的看法或建议"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-5">
+						<button type="submit" class="btn btn-block btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+		</section>
+	</div>
+	<!-- 右侧菜单 -->
+{include file="../application/index/view/common/footer.html" /}

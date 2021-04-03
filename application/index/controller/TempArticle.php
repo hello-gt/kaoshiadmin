@@ -5,51 +5,51 @@ use think\Controller;
 
 class TempArticle extends Controller
 {
-    public function udai_article1()
+    public function article1()
     {
         return $this->fetch();
     }
-    public function udai_article2()
+    public function article2()
     {
         return $this->fetch();
     }
-    public function udai_article3()
+    public function article3()
     {
         return $this->fetch();
     }
-    public function udai_article4()
+    public function article4()
     {
         return $this->fetch();
     }
-    public function udai_article5()
+    public function article5()
     {
         return $this->fetch();
     }
-    public function udai_article6()
+    public function article6()
     {
         return $this->fetch();
     }
-    public function udai_article7()
+    public function article7()
     {
         return $this->fetch();
     }
-    public function udai_article8()
+    public function article8()
     {
         return $this->fetch();
     }
-    public function udai_article9()
+    public function article9()
     {
         return $this->fetch();
     }
-    public function udai_article10()
+    public function article10()
     {
         return $this->fetch();
     }
-    public function udai_article11()
+    public function article11()
     {
         return $this->fetch();
     }
-    public function udai_article12()
+    public function article12()
     {
         return $this->fetch();
     }

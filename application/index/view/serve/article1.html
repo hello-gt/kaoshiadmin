@@ -1,48 +1,46 @@
 {include file="../application/index/view/common/header.html" /}
-	<!-- 顶部tab -->
 	
-
 	<div class="content clearfix bgf5">
 		<section class="user-center inner clearfix">
 			<div class="pull-left bgf">
-				<a href="" class="title">U袋欢迎页</a>
+				<div class="title">U袋欢迎页</div>
 				<dl class="user-center__nav">
 					<dt>帐户信息</dt>
-					<a href=""><dd>个人资料</dd></a>
-					<a href=""><dd>资金管理</dd></a>
-					<a href=""><dd>积分平台</dd></a>
-					<a href=""><dd>收货地址</dd></a>
-					<a href="{:url('user/coupon')}"><dd>我的优惠券</dd></a>
-					<a href="{:url('index/paypwd_modify')}"><dd>修改支付密码</dd></a>
-					<a href="{:url('index/pwd_modify')}"><dd>修改登录密码</dd></a>
+					<a href="{:url('user/setting')}"><dd>个人资料</dd></a>
+					<a href=""{:url('user/treasurer')}""><dd>资金管理</dd></a>
+					<a href=""{:url('user/integral')}""><dd>积分平台</dd></a>
+					<a href=""{:url('user/address')}""><dd>收货地址</dd></a>
+					<a href=""{:url('user/coupon')}""><dd>我的优惠券</dd></a>
+					<a href=""{:url('index/paypwd_modify')}""><dd>修改支付密码</dd></a>
+					<a href=""{:url('index/pwd_modify')}""><dd>修改登录密码</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>订单中心</dt>
-					<a href="{:url('order/order')}"><dd>我的订单</dd></a>
-					<a href="{:url('order/collection')}"><dd>我的收藏</dd></a>
-					<a href="{:url('order/refund')}"><dd>退款/退货</dd></a>
+					<a href=""{:url('order/order')}""><dd>我的订单</dd></a>
+					<a href=""{:url('order/collection')}""><dd>我的收藏</dd></a>
+					<a href=""{:url('order/refund')}""><dd>退款/退货</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>服务中心</dt>
-					<a href="{:url('serve/mail_query')}"><dd>物流查询</dd></a>
+					<a href=""{:url('serve/mail_query')}""><dd>物流查询</dd></a>
 					<a href=""><dd>数据自助下载</dd></a>
-					<a href="{:url('serve/article1')}"><dd class="active">售后服务</dd></a>
-					<a href="{:url('serve/article2')}"><dd>配送服务</dd></a>
-					<a href="{:url('serve/article3')}"><dd>用户协议</dd></a>
-					<a href="{:url('serve/article4')}"><dd>常见问题</dd></a>
+					<a href="article1.html"><dd class="active">售后服务</dd></a>
+					<a href="article2.html"><dd>配送服务</dd></a>
+					<a href="article3.html"><dd>用户协议</dd></a>
+					<a href="article4.html"><dd>常见问题</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>新手上路</dt>
-					<a href="{:url('serve/article5')}"><dd>如何成为代理商</dd></a>
-					<a href="{:url('serve/article6')}"><dd>代销商上架教程</dd></a>
-					<a href="{:url('serve/article7')}"><dd>分销商常见问题</dd></a>
-					<a href="{:url('serve/article8')}"><dd>付款账户</dd></a>
+					<a href="article5.html"><dd>如何成为代理商</dd></a>
+					<a href="article6.html"><dd>代销商上架教程</dd></a>
+					<a href="article7.html"><dd>分销商常见问题</dd></a>
+					<a href="article8.html"><dd>付款账户</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>出卷网</dt>
-					<a href={:url('temp_article/article10')}><dd>企业简介</dd></a>
-					<a href="{:url('serve/article11')}"><dd>加入U袋</dd></a>
-					<a href="{:url('serve/article12')}"><dd>隐私说明</dd></a>
+					<a href="article10.html"><dd>企业简介</dd></a>
+					<a href="article11.html"><dd>加入U袋</dd></a>
+					<a href="article12.html"><dd>隐私说明</dd></a>
 				</dl>
 			</div>
 			<div class="pull-right bgf">
@@ -79,5 +77,46 @@
 		</section>
 	</div>
 	<!-- 右侧菜单 -->
-{include file="../application/index/view/common/right.html" /}
-{include file="../application/index/view/common/footer.html" /}
+	<div class="right-nav">
+		<ul class="r-with-gotop">
+			<li class="r-toolbar-item">
+				<a href="{:url('index/welcome')}" class="r-item-hd">
+					<i class="iconfont icon-user" data-badge="0"></i>
+					<div class="r-tip__box"><span class="r-tip-text">用户中心</span></div>
+				</a>
+			</li>
+			<li class="r-toolbar-item">
+				<a href="{:url('index/shopcart')}" class="r-item-hd">
+					<i class="iconfont icon-cart"></i>
+					<div class="r-tip__box"><span class="r-tip-text">购物车</span></div>
+				</a>
+			</li>
+			<li class="r-toolbar-item">
+				<a href=""{:url('order/collection')}"" class="r-item-hd">
+					<i class="iconfont icon-aixin"></i>
+					<div class="r-tip__box"><span class="r-tip-text">我的收藏</span></div>
+				</a>
+			</li>
+			<li class="r-toolbar-item">
+				<a href="" class="r-item-hd">
+					<i class="iconfont icon-liaotian"></i>
+					<div class="r-tip__box"><span class="r-tip-text">联系客服</span></div>
+				</a>
+			</li>
+			<li class="r-toolbar-item">
+				<a href="{:url('index/issues')}" class="r-item-hd">
+					<i class="iconfont icon-liuyan"></i>
+					<div class="r-tip__box"><span class="r-tip-text">留言反馈</span></div>
+				</a>
+			</li>
+			<li class="r-toolbar-item to-top">
+				<i class="iconfont icon-top"></i>
+				<div class="r-tip__box"><span class="r-tip-text">返回顶部</span></div>
+			</li>
+		</ul>
+		<script>
+			$(document).ready(function(){ $('.to-top').toTop({position:false}) });
+		</script>
+	</div>
+	
+	{include file="../application/index/view/common/footer.html" /}

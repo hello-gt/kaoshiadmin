@@ -14,7 +14,7 @@
 					<a href="{:url('user/address')}"><dd>收货地址</dd></a>
 					<a href="{:url('user/coupon')}"><dd>我的优惠券</dd></a>
 					<a href="{:url('index/paypwd_modify')}"><dd>修改支付密码</dd></a>
-					<a href=""><dd class="active">修改登录密码</dd></a>
+					<a href="{:url('index/pwd_modify')}"><dd>修改登录密码</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>订单中心</dt>
@@ -24,7 +24,7 @@
 				</dl>
 				<dl class="user-center__nav">
 					<dt>服务中心</dt>
-					<a href="{:url('serve/mail_query')}"><dd>物流查询</dd></a>
+					<a href="{:url('serve/mail_query')}"><dd class="active">物流查询</dd></a>
 					<a href=""><dd>数据自助下载</dd></a>
 					<a href="{:url('serve/article1')}"><dd>售后服务</dd></a>
 					<a href="{:url('serve/article2')}"><dd>配送服务</dd></a>
@@ -47,14 +47,34 @@
 			</div>
 			<div class="pull-right">
 				<div class="user-content__box clearfix bgf">
-					<div class="title">账户信息-修改登陆密码</div>
-					<div class="modify_div">
-						<div class="clearfix">
-							<a href="{:url('user/modifypwd_step1')}" role="button" class="but">修改登陆密码</a>
-							<a href="login.html?p=resetpwd" role="button" class="but">忘记登陆密码</a>
+					<div class="title">账户信息-物流查询</div>
+					<form action="" class="user-addr__form form-horizontal" role="form">
+						<div class="input-group col-sm-6">
+							<input class="form-control" placeholder="快递单号" type="text">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">查询</button>
+							</span>
 						</div>
-						<div class="help-block">随时都能更改密码，保障您账户的安全</div>
-					</div>
+						<div class="help-block">例如，您可以输入：<span class="cr">40105060123</span></div>
+						<div class="query-result__box"></div>
+						<script>
+							$(document).ready(function(){
+								// 模拟查询请求
+								$('.btn-primary').on('click',function() {
+									if ($('.form-control').val() == '40105060123') {
+										$('.query-result__box').html('成功查询到数据，返回个html/json在这里展示！');
+									} else {
+										$('.query-result__box').html(`
+											<div class="no-date">
+												<p class="cr">很抱歉，您的快递单号暂时没有查询结果！</p>
+												<p class="fz12 c6">您可以检查下快递单号是否正确</p>
+											</div>
+										`);
+									}
+								});
+							});
+						</script>
+					</form>
 				</div>
 			</div>
 		</section>

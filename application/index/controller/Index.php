@@ -117,25 +117,10 @@ class Index extends Controller
 	public function address_edit(){
 		return $this->fetch();
 	}
-	public function order_detail(){
-		return $this->fetch();
-	}
 	public function shopcart_pay(){
 		return $this->fetch();
 	}
-	public function order_receipted(){
-		return $this->fetch();
-	}
 	public function apply_return(){
-		return $this->fetch();
-	}
-	public function order_evaluate(){
-		return $this->fetch();
-	}
-	public function modifypay_step1(){
-		return $this->fetch();
-	}
-	public function modifypwd_step1(){
 		return $this->fetch();
 	}
 	public function message(){

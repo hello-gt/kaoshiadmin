@@ -3,21 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" href="/static/index/css/iconfont.css">
-	<link rel="stylesheet" href="/static/index/css/global.css">
-	<link rel="stylesheet" href="/static/index/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/static/index/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="/static/index/css/login.css">
-	<script src="/static/index/js/jquery.1.12.4.min.js" charset="UTF-8"></script>
-	<script src="/static/index/js/bootstrap.min.js" charset="UTF-8"></script>
-	<script src="/static/index/js/jquery.form.js" charset="UTF-8"></script>
-	<script src="/static/index/js/global.js" charset="UTF-8"></script>
-	<script src="/static/index/js/login.js" charset="UTF-8"></script>
+	<link rel="stylesheet" href="__INDEX__CSS__/iconfont.css">
+	<link rel="stylesheet" href="__INDEX__CSS__/global.css">
+	<link rel="stylesheet" href="__INDEX__CSS__/bootstrap.min.css">
+	<link rel="stylesheet" href="__INDEX__CSS__/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="__INDEX__CSS__/login.css">
+	<script src="__INDEX__JS__/jquery.1.12.4.min.js" charset="UTF-8"></script>
+	<script src="__INDEX__JS__/bootstrap.min.js" charset="UTF-8"></script>
+	<script src="__INDEX__JS__/jquery.form.js" charset="UTF-8"></script>
+	<script src="__INDEX__JS__/global.js" charset="UTF-8"></script>
+	<script src="__INDEX__JS__/login.js" charset="UTF-8"></script>
 	<title>出卷网 - 登录 / 注册</title>
 </head>
 <body>
 	<div class="public-head-layout container">
-		<a class="logo" href="index.html"><img src="/static/index/images/icons/logo.jpg" alt="出卷网" class="cover"></a>
+		<a class="logo" href="{:url('index/login')}"><img src="__INDEX__IMG__/icons/logo.jpg" alt="出卷网" class="cover"></a>
 	</div>
 	<div style="background:url(images/login_bg.jpg) no-repeat center center; ">
 		<div class="login-layout container">
@@ -76,8 +76,8 @@
 	                    		现在您可以
 	                    	</div>
 	                    	<div class="buts-box">
-	                    		<a role="button" href="index.html" class="btn btn-block btn-lg btn-default">继续访问商城</a>
-								<a role="button" href="udai_welcome.html" class="btn btn-block btn-lg btn-info">登录会员中心</a>
+	                    		<a role="button" href="{:url('index/login')}" class="btn btn-block btn-lg btn-default">继续访问商城</a>
+								<a role="button" href="{:url('index/udai_welcome')}" class="btn btn-block btn-lg btn-info">登录会员中心</a>
 	                    	</div>
 	                    </div>
                     </div>
@@ -88,7 +88,7 @@
   					<h2>欢迎注册<a href="javascript:;" class="pull-right fz16" id="reglogin">返回登录</a></h2>
   				</div>
   				<div class="tabs_container">
-					<form class="tabs_form" action="index.html" method="post" id="register_form">
+					<form class="tabs_form" action="{:url('index/login')}" method="post" id="register_form">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
@@ -116,7 +116,7 @@
 						</div>
 						<div class="checkbox">
 	                        <label>
-	                        	<input checked="" id="register_checkbox" type="checkbox"><i></i> 同意<a href="temp_article/udai_article3.html">出卷网用户协议</a>
+	                        	<input checked="" id="register_checkbox" type="checkbox"><i></i> 同意<a href="{:url('temp_article/udai_article3')}">出卷网用户协议</a>
 	                        </label>
 	                    </div>
 	                    <!-- 错误信息 -->
@@ -137,8 +137,8 @@
 	                    		现在您可以
 	                    	</div>
 	                    	<div class="buts-box">
-	                    		<a role="button" href="index.html" class="btn btn-block btn-lg btn-default">继续访问商城</a>
-								<a role="button" href="udai_welcome.html" class="btn btn-block btn-lg btn-info">登录会员中心</a>
+	                    		<a role="button" href="{:url('index/login')}" class="btn btn-block btn-lg btn-default">继续访问商城</a>
+								<a role="button" href="{:url('index/udai_welcome')}" class="btn btn-block btn-lg btn-info">登录会员中心</a>
 	                    	</div>
 	                    </div>
                     </div>
@@ -193,8 +193,8 @@
 	                    		现在您可以
 	                    	</div>
 	                    	<div class="buts-box">
-	                    		<a role="button" href="index.html" class="btn btn-block btn-lg btn-default">继续访问商城</a>
-								<a role="button" href="login.html" class="btn btn-block btn-lg btn-info">返回登陆</a>
+	                    		<a role="button" href="{:url('index/login')}" class="btn btn-block btn-lg btn-default">继续访问商城</a>
+								<a role="button" href="{:url('index/login')}" class="btn btn-block btn-lg btn-info">返回登陆</a>
 	                    	</div>
 	                    </div>
                     </div>

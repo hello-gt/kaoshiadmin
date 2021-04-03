@@ -1,15 +1,7 @@
 {include file="../application/index/view/common/header.html" /}
 	<!-- 顶部tab -->
 	
-	<!-- 顶部标题 -->
-	<div class="bgf5 clearfix">
-		<div class="top-user">
-			<div class="inner">
-				<a class="logo" href="{:url('index/login')}"><img src="__INDEX__IMG__/icons/logo.jpg" alt="出卷网" class="cover"></a>
-				<div class="title">个人中心</div>
-			</div>
-		</div>
-	</div>
+
 	<div class="content clearfix bgf5">
 		<section class="user-center inner clearfix">
 			<div class="pull-left bgf">
@@ -17,18 +9,18 @@
 				<dl class="user-center__nav">
 					<dt>帐户信息</dt>
 					<a href="{:url('index/udai_setting')}"><dd>个人资料</dd></a>
-					<a href="udai_treasurer.html"><dd>资金管理</dd></a>
+					<a href="{:url('index/udai_treasurer')}"><dd>资金管理</dd></a>
 					<a href="{:url('index/udai_integral')}"><dd>积分平台</dd></a>
 					<a href="{:url('index/udai_address')}"><dd>收货地址</dd></a>
 					<a href="{:url('index/udai_coupon')}"><dd>我的优惠券</dd></a>
-					<a href="udai_paypwd_modify.html"><dd>修改支付密码</dd></a>
-					<a href="udai_pwd_modify.html"><dd>修改登录密码</dd></a>
+					<a href="{:url('index/udai_paypwd_modify')}"><dd>修改支付密码</dd></a>
+					<a href="{:url('index/udai_pwd_modify')}"><dd>修改登录密码</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>订单中心</dt>
-					<a href="udai_order.html"><dd>我的订单</dd></a>
+					<a href="{:url('index/udai_order')}"><dd>我的订单</dd></a>
 					<a href="{:url('index/udai_collection')}"><dd>我的收藏</dd></a>
-					<a href="udai_refund.html"><dd class="active">退款/退货</dd></a>
+					<a href="{:url('index/udai_refund')}"><dd class="active">退款/退货</dd></a>
 				</dl>
 				<dl class="user-center__nav">
 					<dt>服务中心</dt>

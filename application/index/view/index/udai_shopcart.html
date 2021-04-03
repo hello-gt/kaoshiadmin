@@ -1,20 +1,11 @@
 {include file="../application/index/view/common/header.html" /}
 	<!-- 顶部tab -->
 	
-	<!-- 顶部标题 -->
-	<div class="bgf5 clearfix">
-		<div class="top-user">
-			<div class="inner">
-				<a class="logo" href="{:url('index/login')}"><img src="__INDEX__IMG__/icons/logo.jpg" alt="出卷网" class="cover"></a>
-				<div class="title">购物车</div>
-			</div>
-		</div>
-	</div>
 	<div class="content clearfix bgf5">
 		<section class="user-center inner clearfix">
 			<div class="user-content__box clearfix bgf">
 				<div class="title">购物车</div>
-				<form action="udai_shopcart_pay.html" class="shopcart-form__box">
+				<form action="{:url('index/udai_shopcart_pay')}" class="shopcart-form__box">
 					<table class="table table-bordered">
 						<thead>
 							<tr>

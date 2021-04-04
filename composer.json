@@ -18,7 +18,8 @@
     "require": {
         "php": ">=5.4.0",
         "topthink/framework": "*",
-        "topthink/think-image": "dev-master"
+        "topthink/think-image": "dev-master",
+        "phpoffice/phpword": "0.18.x-dev"
     },
     "extra": {
         "think-path": "thinkphp"

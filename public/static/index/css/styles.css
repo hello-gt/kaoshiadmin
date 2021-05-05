@@ -209,7 +209,7 @@ body {overflow-y: scroll}
 	border-bottom: 1px solid #e0e0e0;
 }
 .footer-links dl {
-	width: 100%;
+	width: 80%;
 	margin-bottom: 0;
 	padding-left: 100px;
 }
